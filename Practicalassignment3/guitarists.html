@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>The Top 10 Greatest Guitar Players of All Time</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@300;400;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --cream:#f6f4f0;
+    --paper:#fffefc;
+    --muted:#7b7b7b;
+    --black:#111;
+    --accent:#fcc348;
+    --dark-footer:#222;
+    --max-width:1200px;
+  }
+
+  html,body{
+    height:100%;
+    margin:0;
+    background:var(--paper);
+    color:#222;
+    font-family:"Roboto", Arial, sans-serif;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+  }
+  a{color:inherit;text-decoration:none;}
+  .page{max-width:var(--max-width);margin:0 auto;}
+
+  header.hero{
+    display:grid;
+    grid-template-columns:1fr 420px;
+    gap:40px;
+    padding:56px 32px;
+    background:var(--cream);
+    align-items:start;
+    position:relative;
+  }
+
+  .mast{display:flex;flex-direction:column;gap:18px;}
+  .site-label{font-weight:700;font-size:14px;letter-spacing:1px;color:#000;}
+  h1.title{
+    margin:0;
+    font-family:"Bebas Neue", sans-serif;
+    font-size:84px;
+    line-height:0.96;
+    letter-spacing:-2px;
+    text-transform:uppercase;
+    color:#111;
+  }
+
+  .intro-list{
+    margin-top:10px;
+    color:var(--muted);
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  .social{
+    margin-top:22px;
+    text-transform:uppercase;
+    font-size:12px;
+    color:#222;
+    letter-spacing:1px;
+  }
+
+  .hero-photo{position:relative;overflow:visible;}
+  .hero-photo img{
+    width:100%;
+    display:block;
+    border-radius:2px;
+    box-shadow:0 6px 18px rgba(0,0,0,0.08);
+  }
+
+  .hero-caption{
+    font-size:12px;
+    color:var(--muted);
+    margin-top:8px;
+    text-align:right;
+  }
+
+  .photo-strip{
+    display:flex;
+    gap:12px;
+    padding:26px 32px 0;
+    justify-content:center;
+  }
+  .photo-strip img{width:23%;height:auto;object-fit:cover;display:block;}
+
+  .lead{
+    padding:26px 40px;
+    max-width:860px;
+    margin:0 auto 10px;
+    color:#333;
+    font-size:16px;
+    line-height:1.7;
+  }
+  .section{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:30px;
+    padding:36px 32px;
+    align-items:center;
+  }
+
+  .section.dark{background:#111;color:#fff;}
+  .section .heading{
+    font-family:"Bebas Neue",sans-serif;
+    font-size:40px;
+    text-transform:uppercase;
+    margin:0 0 14px 0;
+    letter-spacing:0;
+  }
+  .section .body{font-size:15px;color:inherit;line-height:1.7;}
+
+  .btn{
+    display:inline-block;
+    margin-top:18px;
+    padding:10px 16px;
+    border:2px solid currentColor;
+    text-transform:uppercase;
+    font-size:13px;
+    letter-spacing:1px;
+  }
+  .section.image-right{grid-template-columns:1fr 460px;}
+  .section.image-left{grid-template-columns:460px 1fr;}
+
+  .section .photo{width:100%;display:block;border-radius:3px;box-shadow:0 8px 20px rgba(0,0,0,0.08);}
+  .two-portraits{display:flex;gap:16px;align-items:center;}
+  .two-portraits img{width:110px;height:110px;object-fit:cover;border-radius:4px;}
+  .yellow-band{
+    background:var(--accent);
+    color:#111;
+    display:flex;
+    gap:28px;
+    align-items:center;
+    padding:40px 32px;
+  }
+  .yellow-band .text{flex:1;}
+  .yellow-band .art{width:320px;}
+
+  footer.site-footer{
+    background:var(--dark-footer);
+    color:#fff;
+    padding:34px 32px;
+    text-align:center;
+    letter-spacing:1px;
+  }
+
+  .dec-square{
+    position:absolute;
+    background:rgba(244,183,49,0.95);
+    width:80px;
+    height:24px;
+    transform:rotate(-2deg);
+    left:120px;
+    top:180px;
+    z-index:2;
+  }
+
+  .overlay-rect{
+    position:absolute;
+    background:rgba(0,0,0,0.35);
+    width:220px;
+    height:170px;
+    right:40px;
+    top:38px;
+    mix-blend-mode:multiply;
+    border-radius:6px;
+  }
+
+  .pattern-bg{
+    background-image:linear-gradient(transparent 0,transparent 70%,rgba(0,0,0,0.02) 70%);
+    background-size:16px 16px;
+    padding-bottom:10px;
+  }
+
+  @media (max-width:1100px){
+    header.hero{grid-template-columns:1fr 360px;gap:28px;padding:44px 18px;}
+    h1.title{font-size:72px;}
+    .overlay-rect{display:none;}
+  }
+
+  @media (max-width:880px){
+    header.hero{grid-template-columns:1fr;padding:28px 14px;}
+    .hero-photo{order:-1;margin-bottom:18px;}
+    h1.title{font-size:54px;}
+    .photo-strip img{width:48%;}
+    .section,.yellow-band{grid-template-columns:1fr;display:block;padding:28px 16px;}
+    .yellow-band .art{width:100%;margin-top:18px;}
+    .photo-strip{padding-left:8px;padding-right:8px;}
+  }
+
+  @media (max-width:480px){
+    h1.title{font-size:40px;}
+    .mast .intro-list{font-size:13px;}
+    .btn{padding:8px 12px;font-size:12px;}
+  }
+
+  .muted{color:var(--muted);font-size:13px;}
+  .uppercase{text-transform:uppercase;letter-spacing:1px;}
+</style>
+</head>
+
+<body>
+<div class="page">
+
+  <header class="hero">
+    <div class="mast">
+      <div class="site-label">MUSIC NEWS</div>
+
+      <h1 class="title">THE TOP 10 GREATEST GUITAR PLAYERS OF ALL TIME</h1>
+
+      <div class="intro-list">
+        <p><strong>How to Define the Greatest Guitarists?</strong><br>
+        The Top 10 Guitarists in the World<br>
+        Honourable Mentions for the Top 100 Guitarists, by you!<br>
+        The Worlds Best Blues Guitarists<br>
+        The Top 'World Music' Guitarists<br>
+        Techniques to Become a Great Guitarist Yourself</p>
+
+        <div class="social">
+          <div>YOUTUBE</div>
+          <div>FACEBOOK</div>
+          <div>TWITTER</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-photo" aria-hidden="true">
+      <img src="WhatsApp Image 2025-10-30 at 10.45.16 PM.jpeg" alt="Jimi Hendrix">
+      <div class="hero-caption">Jimi Hendrix, 1967, by Linda McCartney / National Portrait Gallery, gift of the photographer</div>
+
+      <div class="dec-square" style="left:18px; top:220px;"></div>
+      <div class="overlay-rect" style="right:10px; top:18px;"></div>
+    </div>
+  </header>
+
+  <div class="photo-strip" role="group" aria-label="thumbnail photos">
+    <img src="WhatsApp Image 2025-10-30 at 10.42.25 PM (1).jpeg" alt="Gary Moore performing live">
+    <img src="WhatsApp Image 2025-10-30 at 10.42.25 PM.jpeg" alt="David Gilmour playing guitar">
+    <img src="WhatsApp Image 2025-10-30 at 10.45.16 PM.jpeg" alt="Jimi Hendrix portrait">
+    <img src="blob:https://web.whatsapp.com/a447d06b-7eec-4650-bc8c-c1bd4bd1ec65" alt="photo 4 placeholder">
+  </div>
+
+  <section class="lead pattern-bg">
+    <p>What's more, musicians will (or at least modern musicians have the opportunity to) learn about their niche area through metadata analysis and find out what makes the fans tick, so that they can pick up on this connection between music maker and listener. As such, how can you really be sure that the person playing the drums, strumming on the guitar or singing the song on your favourite album is actually feeling the music in the magical way we'd like to think they are?</p>
+  </section>
+
+  <!-- Steve Hackett -->
+  <section class="section image-left">
+    <div>
+      <img class="photo" src="blob:https://web.whatsapp.com/15cd253b-c2c8-4932-97b7-780ea4095bd4" alt="Steve Hackett placeholder">
+    </div>
+    <div>
+      <h2 class="heading">STEVE HACKETT</h2>
+      <p class="body">Steve explains, “I always hoped that the Genesis music would one day involve an orchestra and I'm proud to say I'll now be able to make that dream a reality on my next British tour, involving my own extraordinary rock band alongside a full-sized orchestra.”</p>
+    </div>
+  </section>
+
+  <!-- Jimmy Page (dark bg) -->
+  <section class="section dark image-right" style="padding-top:20px; padding-bottom:20px;">
+    <div>
+      <h2 class="heading">JIMMY PAGE</h2>
+      <p class="body">One of the founding and leading members of the famous band Led Zeppelin is naturally third on our list of the top 10 best guitarists on the planet.</p>
+      <p class="body">Known as "The Wizard," Page is a guitarist like no other, playing with a violin bow on his famous Gibson, alternating blues and rock with joy and passion.</p>
+      <a class="btn" href="#" aria-label="Learn more about Jimmy Page">LEARN MORE</a>
+    </div>
+    <div>
+      <img class="photo" src="blob:https://web.whatsapp.com/b01d662b-5258-4261-9f04-dda5a152bf5f" alt="Jimmy Page placeholder">
+    </div>
+  </section>
+
+  <!-- Happy birthday Jimmy Page -->
+  <section class="section">
+    <div>
+      <h2 class="heading">HAPPY BIRTHDAY, JIMMY PAGE</h2>
+      <p class="body">The music that Jimmy Page made was able to transport you so that you got lost in what he was playing. His solos were show-stopping and so innovative when it came to guitar-playing technique at the time. He set himself the challenge of breaking the preconceptions of what a guitar can do, so his style evolved over time. But he was always one of the greats, even when experimenting!</p>
+      <a class="btn" href="#">LEARN MORE</a>
+    </div>
+    <div style="display:flex;align-items:center;justify-content:center;gap:20px;flex-direction:column;">
+      <img class="photo" src="https://www.google.com/url?sa=i&url=https%3A%2F%2Fwww.pinterest.com%2Fpin%2F436427020136314221%2F&psig=AOvVaw2N519gUKqP1LVjdx2YrqzN&ust=1761931742334000&source=images&cd=vfe&opi=89978449&ved=0CBUQjRxqFwoTCLC5uaHAzJADFQAAAAAdAAAAABAE" alt="Jimmy Page portrait placeholder" style="max-width:420px;">
+      <div style="display:flex;gap:12px;align-items:center;margin-top:10px;">
+        <div style="background:rgba(244,183,49,0.85);width:120px;height:72px;"></div>
+        <img src="blob:https://web.whatsapp.com/8fed4484-1dcc-47da-a48f-84cb88ef9479" alt="portrait placeholder" style="width:110px;height:auto;border-radius:2px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Carlos Santana (dark sec.) -->
+  <section class="section dark image-left" style="padding-top:28px;padding-bottom:28px;">
+    <div>
+      <img class="photo" src="blob:https://web.whatsapp.com/46e89eb2-2756-4f7a-87d0-d4b55e74eff7" alt="Carlos Santana placeholder">
+    </div>
+    <div>
+      <h2 class="heading">CARLOS SANTANA</h2>
+      <p class="body">Word music precursor, the Mexican-born Santana has inspired numerous artists around the world. Named "The Pope" of rock with Latino vibes, he's a genius guitarist who discovered the magic formula by skillfully merging rock, blues, samba, and percussions, along with other guitar styles.</p>
+    </div>
+  </section>
+
+  <!-- Keith Richards + Brian May -->
+  <section class="section" style="padding-top:18px;padding-bottom:18px;">
+    <div>
+      <h2 class="heading">KEITH RICHARDS</h2>
+      <p class="body">His obsession with sound and his personal playing technique (thanks to his 5-string guitar with open tuning in G) ranks him as one of the greatest rhythmic guitarists of all time. Though not necessary one of the technical greats, his chord-playing conveys so much emotion it's as if the guitar is singing the notes.</p>
+    </div>
+
+    <div>
+      <div class="two-portraits" style="justify-content:flex-end;">
+        <div style="text-align:right;">
+          <div class="muted" style="margin-top:8px;"></div>
+        </div>
+
+        <div style="text-align:right;">
+          <div class="muted" style="margin-top:8px;"></div>
+        </div>
+      </div>
+
+      <h2 class="heading" style="font-size:30px;margin-top:18px;">BRIAN MAY</h2>
+      <p class="body">Brian May rose to rock super-stardom as the lead guitarist of Queen. He's also earned advanced degrees in physics and is a devoted animal welfare advocate.</p>
+    </div>
+  </section>
+
+  <!-- OYE COMO VA -->
+  <section class="yellow-band">
+    <div class="text">
+      <h2 class="heading" style="font-size:48px;margin:0 0 8px 0;">OYE COMO VA</h2>
+      <p class="body">Carlos Santana took rhythm and blues and gave it a Latin flavor. He also expertly complemented his extraordinary guitar licks with an array of percussion instruments to create a one-of-a-kind musical voice. Lots of influences are apparent in his music, especially jazz, blues and rock. In his early years, he grew out of the psychedelic '60s, but later he incorporated a spiritual element to his songs.</p>
+      <a class="btn" href="#">LEARN MORE</a>
+    </div>
+
+    <div class="art" style="display:flex;align-items:center;justify-content:center;">
+      <img src="blob:https://web.whatsapp.com/bb5739dd-c2bc-4d96-b72d-0ce048afa704" alt="Santana illustration placeholder" style="max-width:100%;border-radius:4px;">
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div style="font-weight:700;font-family:'Bebas Neue',sans-serif;font-size:22px;">MUSIC NEWS</div>
+    <div style="margin-top:8px;color:rgba(255,255,255,0.78);font-size:13px;">Lots of influences are apparent in his music, especially jazz, blues and rock</div>
+    <div style="margin-top:14px;">
+      <a href="#" style="color:#fff;margin:0 8px;">f</a>
+      <a href="#" style="color:#fff;margin:0 8px;">t</a>
+      <a href="#" style="color:#fff;margin:0 8px;">in</a>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>
