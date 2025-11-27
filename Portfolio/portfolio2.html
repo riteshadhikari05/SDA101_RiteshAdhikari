@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ritesh Adhikari - Personal Profile</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+
+        /* Header Styles - Exact Match */
+        .header {
+            background-color: #2ecc71;
+            padding: 15px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 30px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            transition: opacity 0.3s;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-top: 60px;
+            min-height: calc(100vh - 120px);
+        }
+
+        /* Page Container */
+        .page {
+            display: none;
+            animation: fadeIn 0.3s ease-in;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        /* Home Page - Exact Match */
+        .home-page {
+            padding: 80px 30px 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: calc(100vh - 120px);
+        }
+
+        .home-container {
+            display: flex;
+            gap: 80px;
+            align-items: center;
+            max-width: 1100px;
+            width: 100%;
+        }
+
+        .profile-section {
+            flex: 0 0 auto;
+        }
+
+        .profile-img-container {
+            width: 320px;
+            height: 320px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 8px solid #2ecc71;
+            position: relative;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .info-section {
+            flex: 1;
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .hello-text {
+            font-size: 32px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .welcome-text {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 35px;
+            line-height: 1.6;
+        }
+
+        .nav-buttons {
+            display: flex;
+            gap: 25px;
+            margin-bottom: 30px;
+        }
+
+        .nav-btn {
+            background-color: #2ecc71;
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 600;
+            transition: background-color 0.3s;
+            text-transform: uppercase;
+        }
+
+        .nav-btn:hover {
+            background-color: #27ae60;
+        }
+
+        /* About Page - Exact Match */
+        .about-page {
+            padding: 80px 30px 40px;
+            background-color: #f5f5f5;
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            gap: 40px;
+        }
+
+        .about-left {
+            flex: 1.5;
+            background-color: #2ecc71;
+            padding: 50px;
+            border-radius: 10px;
+            color: white;
+            position: relative;
+        }
+
+        .about-left h2 {
+            font-size: 42px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .about-left p {
+            font-size: 16px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .about-photo {
+            position: absolute;
+            bottom: 30px;
+            right: 30px;
+            width: 120px;
+            height: 120px;
+            border-radius: 10px;
+            object-fit: cover;
+            border: 3px solid white;
+        }
+
+        .about-right {
+            flex: 1;
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .about-right h3 {
+            color: #2ecc71;
+            font-size: 28px;
+            margin-bottom: 25px;
+            font-weight: bold;
+        }
+
+        .hobby-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 18px;
+            padding: 12px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+
+        .hobby-item:hover {
+            background-color: #e8f8f5;
+            transform: translateX(5px);
+        }
+
+        .hobby-icon {
+            width: 45px;
+            height: 45px;
+            background-color: #2ecc71;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 18px;
+            font-size: 18px;
+        }
+
+        .hobby-text {
+            font-size: 15px;
+            color: #333;
+            font-weight: 500;
+        }
+
+        /* Education Page - Exact Match */
+        .education-page {
+            padding: 80px 30px 40px;
+            background-color: #f5f5f5;
+        }
+
+        .education-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .education-title {
+            font-size: 32px;
+            color: #2ecc71;
+            margin-bottom: 40px;
+            text-align: center;
+            font-weight: bold;
+        }
+
+        .education-item {
+            display: flex;
+            align-items: center;
+            padding: 25px;
+            border-bottom: 1px solid #eee;
+            transition: background-color 0.3s;
+        }
+
+        .education-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .education-item:last-child {
+            border-bottom: none;
+        }
+
+        .school-logo {
+            width: 90px;
+            height: 90px;
+            background-color: #2ecc71;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 35px;
+            margin-right: 35px;
+            flex-shrink: 0;
+        }
+
+        .school-info {
+            flex: 1;
+        }
+
+        .school-name {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 8px;
+        }
+
+        .school-period {
+            font-size: 15px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+
+        .school-degree {
+            font-size: 16px;
+            color: #2ecc71;
+            font-weight: 500;
+        }
+
+        /* Footer - Exact Match */
+        .footer {
+            background-color: #2ecc71;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            margin-bottom: 15px;
+        }
+
+        .social-icons a {
+            color: white;
+            font-size: 22px;
+            transition: transform 0.3s;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+        }
+
+        .copyright {
+            font-size: 14px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .home-container {
+                flex-direction: column;
+                gap: 40px;
+            }
+
+            .about-container {
+                flex-direction: column;
+            }
+
+            .profile-img-container {
+                width: 250px;
+                height: 250px;
+            }
+
+            .header-content {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .about-photo {
+                position: static;
+                margin-top: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">Ritesh Adhikari / Software Engineering</div>
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showPage('home')">HOME</a></li>
+                    <li><a href="#" onclick="showPage('about')">ABOUT ME</a></li>
+                    <li><a href="#" onclick="showPage('education')">EDUCATION BACKGROUND</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Home Page -->
+        <div id="home" class="page active">
+            <div class="home-page">
+                <div class="home-container">
+                    <div class="profile-section">
+                        <div class="profile-img-container">
+                            <img src="https://picsum.photos/seed/ritesh123/320/320.jpg" alt="Ritesh Adhikari" class="profile-img">
+                        </div>
+                    </div>
+                    <div class="info-section">
+                        <h1 class="hello-text">HELLO this is Ritesh Adhikari</h1>
+                        <p class="welcome-text">
+                            WELCOME TO MY PERSONAL PROFILE<br>
+                            CLICK on the above buttons to learn more about me
+                        </p>
+                        <div class="nav-buttons">
+                            <button class="nav-btn" onclick="showPage('about')">ABOUT ME</button>
+                            <button class="nav-btn" onclick="showPage('education')">EDUCATIONAL BACKGROUND</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- About Page -->
+        <div id="about" class="page">
+            <div class="about-page">
+                <div class="about-container">
+                    <div class="about-left">
+                        <h2>HELLO!</h2>
+                        <p>
+                            I am a first-year software engineering student with a passion for designing and developing applications. 
+                            I love programming and solving problems, and I'm always eager to learn new technologies.
+                        </p>
+                        <p>
+                            My journey in software development started with curiosity about how things work on the internet. 
+                            Now, I'm dedicated to building solutions that make a difference.
+                        </p>
+                        <img src="https://picsum.photos/seed/riteshabout/120/120.jpg" alt="Ritesh" class="about-photo">
+                    </div>
+                    <div class="about-right">
+                        <h3>HOBBIES</h3>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="hobby-text">Web - designing</div>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <div class="hobby-text">App - designing</div>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-code"></i>
+                            </div>
+                            <div class="hobby-text">Programming</div>
+                        </div>
+                        <div class="hobby-item">
+                            <div class="hobby-icon">
+                                <i class="fas fa-book"></i>
+                            </div>
+                            <div class="hobby-text">Learning new technologies</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Education Page -->
+        <div id="education" class="page">
+            <div class="education-page">
+                <div class="education-container">
+                    <h2 class="education-title">MY EDUCATIONAL BACKGROUND:</h2>
+                    
+                    <div class="education-item">
+                        <div class="school-logo">
+                            <i class="fas fa-school"></i>
+                        </div>
+                        <div class="school-info">
+                            <div class="school-name">Lungtenzampa Middle Secondary School</div>
+                            <div class="school-period">Completed Middle School - 2021</div>
+                            <div class="school-degree">Middle Secondary Education</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="school-logo">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <div class="school-info">
+                            <div class="school-name">Ugyen Academy</div>
+                            <div class="school-period">Completed High School - 2024</div>
+                            <div class="school-degree">Higher Secondary Education</div>
+                        </div>
+                    </div>
+
+                    <div class="education-item">
+                        <div class="school-logo">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <div class="school-info">
+                            <div class="school-name">College of Science and Technology</div>
+                            <div class="school-period">Currently Studying</div>
+                            <div class="school-degree">Bachelor of Software Engineering</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-icons">
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-linkedin"></i></a>
+            <a href="#"><i class="fab fa-github"></i></a>
+        </div>
+        <div class="copyright">
+            © 2025 Ritesh Adhikari. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        function showPage(pageId) {
+            // Hide all pages
+            const pages = document.querySelectorAll('.page');
+            pages.forEach(page => {
+                page.classList.remove('active');
+            });
+            
+            // Show selected page
+            document.getElementById(pageId).classList.add('active');
+            
+            // Scroll to top
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial page
+            showPage('home');
+        });
+    </script>
+</body>
+</html>
